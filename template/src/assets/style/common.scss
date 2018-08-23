@@ -1,0 +1,109 @@
+.cf:after,
+.cf:before {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.rel {
+    position: relative;
+}
+.btn {
+    border-radius: 0;
+    padding: 0;
+    height: 96rpx;
+    font-size: 28rpx;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    background: #fff;
+    border-radius: 10rpx;
+  }
+.btn:after,
+.btn:before {
+    border: none;
+}
+.flex, .flex-vertical {
+	display: flex;
+	align-items: stretch
+}
+
+.flex-vertical {
+	flex-direction: column
+}
+
+.flex-start {
+	align-items: flex-start
+}
+
+.flex-middle {
+	align-items: center
+}
+
+.flex-end {
+	align-items: flex-end
+}
+
+.flex-justify {
+	justify-content: space-between
+}
+
+.flex-around {
+	justify-content: space-around
+}
+
+.flex-center {
+	justify-content: center
+}
+
+.flex-item {
+	flex: 0 0 auto
+}
+
+.flex-item-auto {
+	flex: auto
+}
+
+.flex-item-1 {
+	flex: 1
+}
+
+.flex-item-2 {
+	flex: 2
+}
+
+.btn {
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-radius: 0;
+    background: #fff;
+    border: none;
+
+    &:focus, &:active {
+        outline: 0;
+    }
+
+    &:after{
+      border-color: transparent;
+    }
+}
+
+.h-section + .h-section {
+    margin-left: 16px;
+}
+.border:after {
+    content: "";
+    height: 1px;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    transform: scaleY(.4);
+    box-sizing: border-box;
+    pointer-events: none;
+    background: #eee;
+    position: absolute;
+    z-index: 1;
+}

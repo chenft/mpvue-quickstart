@@ -1,13 +1,31 @@
 <script>
+import Vue from 'vue'
+import login from '@/utils/login'
+import config from '@/config'
 export default {
-    created{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
-        // 调用API从本地缓存中获取数据
-        const logs = wx.getStorageSync('logs') || []{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-        logs.unshift(Date.now()){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-        wx.setStorageSync('logs', logs){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-
-        console.log('app created and cache logs by setStorageSync'){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    mounted () {
+        const {
+            f,
+            from
+        } = this.$root.$mp.appOptions.query
+        this.f = f || ''
+        this.from = from || ''
+        Vue.prototype.$ald = this.ald
+    },
+    async created{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
+        const res = await login()
+        console.log(res)
+    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}},
+    methods: {
+        ald (name, data = {}) {
+            const app = getApp()
+            app.aldstat.sendEvent(name, {
+                f: this.f,
+                from: this.from,
+                ...data
+            })
+        }
+    }
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
 
