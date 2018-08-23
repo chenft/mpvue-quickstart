@@ -1,7 +1,7 @@
 <script>
 import Vue from 'vue'
 import login from '@/utils/login'
-import config from '@/config'
+// import config from '@/config'
 export default {
     mounted () {
         const {

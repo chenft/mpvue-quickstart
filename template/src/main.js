@@ -1,10 +1,10 @@
-{{#if_eq build "standalone"}}
+{{#if_eq build 'standalone'}}
 // The Vue build version to load with the `import` command
 // mpvue has been set in webpack.base.conf with an alias.
 {{/if_eq}}
 import '../static/sdk/ald-stat'
-import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Vue from 'vue'{{#if_eq lintConfig 'airbnb'}};{{/if_eq}}
+import App from './App'{{#if_eq lintConfig 'airbnb"}};{{/if_eq}}
 {{#if vuex}}
 import store from './store'
 {{/if}}
@@ -30,10 +30,10 @@ export default {
             '^pages/index/main'
         ],
         window: {
-            backgroundTextStyle: "light",
-            navigationBarBackgroundColor: "#fff",
-            navigationBarTitleText: "WeChat",
-            navigationBarTextStyle: "black"
+            backgroundTextStyle: 'light',
+            navigationBarBackgroundColor: '#fff',
+            navigationBarTitleText: 'WeChat',
+            navigationBarTextStyle: 'black'
         }
     }
 }

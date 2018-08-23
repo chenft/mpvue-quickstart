@@ -23,7 +23,7 @@
 
 <script>
 import base from '@/extends/base'
-import Bus from '@/eventBus'
+// import Bus from '@/eventBus'
 export default {
     extends: base,
     data{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
@@ -65,7 +65,7 @@ export default {
             wx.navigateTo({ url }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
         },
         getUserInfo{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
-        // 调用登录接口
+            // 调用登录接口
             wx.login({
                 success: () => {
                     wx.getUserInfo({
@@ -88,8 +88,6 @@ export default {
         // Bus.$on('completeEdit', this.showTipModal)
         // Bus.$emit('completeEdit')
         // Bus.$off('completeEdit', this.showTipModal)
-
-
     }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
