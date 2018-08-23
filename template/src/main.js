@@ -3,8 +3,8 @@
 // mpvue has been set in webpack.base.conf with an alias.
 {{/if_eq}}
 import '../static/sdk/ald-stat'
-import Vue from 'vue'{{#if_eq lintConfig 'airbnb'}};{{/if_eq}}
-import App from './App'{{#if_eq lintConfig 'airbnb"}};{{/if_eq}}
+import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#if vuex}}
 import store from './store'
 {{/if}}
