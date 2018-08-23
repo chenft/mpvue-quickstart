@@ -1,4 +1,4 @@
-{{#if_eq build 'standalone'}}
+{{#if_eq build "standalone"}}
 // The Vue build version to load with the `import` command
 // mpvue has been set in webpack.base.conf with an alias.
 {{/if_eq}}
