@@ -15,7 +15,7 @@ export default {
     async created{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
         const res = await login()
         console.log(res)
-    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}},
+    },
     methods: {
         ald (name, data = {}) {
             const app = getApp()
@@ -25,7 +25,7 @@ export default {
                 ...data
             })
         }
-    }
+    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
 
