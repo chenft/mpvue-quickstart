@@ -2,9 +2,10 @@
 
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  // parser: 'babel-eslint',
   parserOptions: {
-    sourceType: 'module'
+    sourceType: 'module',
+    parser: 'babel-eslint'
   },
   env: {
     browser: false,
@@ -13,14 +14,14 @@ module.exports = {
   },
   {{#if_eq lintConfig "standard"}}
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-  extends: 'standard',
+  extends: ['plugin:vue/essential', 'standard'],
   {{/if_eq}}
   {{#if_eq lintConfig "airbnb"}}
-  extends: 'airbnb-base',
+  extends: ['plugin:vue/essential', 'airbnb-base'],
   {{/if_eq}}
   // required to lint *.vue files
   plugins: [
-    'html'
+    // 'html'
   ],
   {{#if_eq lintConfig "airbnb"}}
   // check if imports actually resolve
@@ -52,7 +53,9 @@ module.exports = {
     }],
     {{/if_eq}}
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    "indent": "off",
+    "vue/script-indent": ["error", 4]
   },
   globals: {
     App: true,
