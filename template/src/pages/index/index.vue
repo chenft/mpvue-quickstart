@@ -22,10 +22,8 @@
 </template>
 
 <script>
-import base from '@/extends/base'
 // import Bus from '@/eventBus'
 export default {
-    extends: base,
     data{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
         return {
             motto: 'Hello World',
